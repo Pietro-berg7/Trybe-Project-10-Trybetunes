@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
-import MusicCard from '../components/MusicCard';
+import Card from '../components/Card';
 import './Search.css';
 
 export default class Search extends Component {
@@ -85,7 +85,7 @@ export default class Search extends Component {
         </div>
         <section className="search__section">
           { albumsList
-            .map((music) => (<MusicCard
+            .map((music) => (<Card
               key={ music.artistId }
               music={ music }
             />)) }
