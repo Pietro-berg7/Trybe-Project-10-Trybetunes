@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.header__header {
+  align-items: center;
+  display: flex;
+  height: 80px;
+}
+
+.header__div {
+  display: flex;
+  font-size: 1.3em;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav {
+  color: #107e22;
+}
+
+.nav:hover {
+  color: white;
+}

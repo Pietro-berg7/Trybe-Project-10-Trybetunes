@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import './Search.css';
 
 export default class Search extends Component {
   state = {
@@ -13,7 +14,8 @@ export default class Search extends Component {
     result: '',
   };
 
-  handleButtonClick = async () => {
+  handleButtonClick = async (event) => {
+    event.preventDefault();
     this.setState({
       loading: true,
     });
@@ -54,37 +56,42 @@ export default class Search extends Component {
     } = this.state;
 
     return (
-      <div data-testid="page-search">
+      <div className="search__div" data-testid="page-search">
         <Header />
-        <label htmlFor="search">
-          <input
-            data-testid="search-artist-input"
-            type="text"
-            id="search"
-            name="searchValue"
-            value={ searchValue }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          data-testid="search-artist-button"
-          type="submit"
-          disabled={ button }
-          onClick={ this.handleButtonClick }
-        >
-          Pesquisar
-        </button>
+        <form className="search__form">
+          <label htmlFor="search">
+            <input
+              className="search__input"
+              data-testid="search-artist-input"
+              type="text"
+              id="search"
+              name="searchValue"
+              value={ searchValue }
+              onChange={ this.handleChange }
+            />
+          </label>
+          <button
+            className="search__button"
+            data-testid="search-artist-button"
+            type="submit"
+            disabled={ button }
+            onClick={ this.handleButtonClick }
+          >
+            Pesquisar
+          </button>
+        </form>
         <div>
-          { loading ? <Loading /> : result }
+          { loading ? <Loading /> : (<p className="search__result">{ result }</p>) }
         </div>
-        <section>
+        <section className="search__section">
           { albumsList
             .map((music) => (<MusicCard
               key={ music.artistId }
               music={ music }
             />)) }
+          { !albumsList.length
+            && (<p className="search__error">Nenhum álbum foi encontrado</p>) }
         </section>
-        { !albumsList.length && (<p>Nenhum álbum foi encontrado</p>) }
       </div>
     );
   }

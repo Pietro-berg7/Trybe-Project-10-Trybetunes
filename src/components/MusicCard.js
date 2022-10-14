@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
 import { Link } from 'react-router-dom';
+import './MusicCard.css';
 
 export default class MusicCard extends Component {
   render() {
@@ -16,10 +17,10 @@ export default class MusicCard extends Component {
         data-testid={ `link-to-album-${collectionId}` }
         to={ `/album/${collectionId}` }
       >
-        <div>
-          <img src={ artworkUrl100 } alt={ collectionName } />
-          <p>{ collectionName }</p>
-          <p>{ artistName }</p>
+        <div className="card__div">
+          <img className="card__img" src={ artworkUrl100 } alt={ collectionName } />
+          <p className="card__p">{ collectionName }</p>
+          <p className="card__p">{ artistName }</p>
         </div>
       </Link>
     );
