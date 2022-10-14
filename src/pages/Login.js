@@ -65,7 +65,7 @@ export default class Login extends Component {
             Entrar
           </button>
           { loading && <Loading /> }
-          { redirect && history.replace('/search')}
+          { redirect && history.push('/search')}
         </form>
       </div>
     );
