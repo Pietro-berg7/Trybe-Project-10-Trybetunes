@@ -15,9 +15,9 @@ export default class Favorites extends Component {
     this.getFavoriteSongs();
   }
 
-  // componentDidUpdate() {
-  //   this.getFavoriteSongs();
-  // }
+  componentDidUpdate() {
+    this.getFavoriteSongs();
+  }
 
   getFavoriteSongs = async () => {
     this.setState({
