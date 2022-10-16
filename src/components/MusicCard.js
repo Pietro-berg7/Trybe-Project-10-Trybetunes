@@ -55,7 +55,6 @@ export default class MusicCard extends Component {
     await removeSong(music);
     this.setState({
       loading: false,
-      // favorite: result,
     });
   };
 
