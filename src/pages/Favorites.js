@@ -16,8 +16,16 @@ export default class Favorites extends Component {
   }
 
   componentDidUpdate() {
-    this.getFavoriteSongs();
+    this.updateFavSongs();
   }
+
+  updateFavSongs = async () => {
+    const { music } = this.props;
+    const result = await getFavoriteSongs(music);
+    this.setState({
+      favorites: result,
+    });
+  };
 
   getFavoriteSongs = async () => {
     this.setState({
@@ -36,12 +44,11 @@ export default class Favorites extends Component {
     return (
       <div data-testid="page-favorites">
         <Header />
-        {loading && <Loading />}
+        { loading && <Loading /> }
         { favorites
           .map((element) => (<MusicCard
             key={ element.trackName }
             music={ element }
-            removeFav="remove"
           />)) }
       </div>
     );
