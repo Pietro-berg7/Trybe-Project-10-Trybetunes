@@ -7,7 +7,7 @@ import MusicCard from '../components/MusicCard';
 
 export default class Favorites extends Component {
   state = {
-    loading: false,
+    loading: true,
     favorites: [],
   };
 
@@ -16,9 +16,6 @@ export default class Favorites extends Component {
   }
 
   newFavoriteSongs = async () => {
-    this.setState({
-      loading: true,
-    });
     const result = await getFavoriteSongs();
     this.setState({
       loading: false,

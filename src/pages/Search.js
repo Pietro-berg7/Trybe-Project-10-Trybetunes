@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { shape } from 'prop-types';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
@@ -86,7 +87,7 @@ export default class Search extends Component {
         <section className="search__section">
           { albumsList
             .map((music) => (<Card
-              key={ music.artistId }
+              key={ music.collectionId }
               music={ music }
             />)) }
           { !albumsList.length
@@ -96,3 +97,7 @@ export default class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  music: shape,
+}.isRequired;

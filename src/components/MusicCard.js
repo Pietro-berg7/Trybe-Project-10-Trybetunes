@@ -58,19 +58,18 @@ export default class MusicCard extends Component {
 
   handleFavMusic = () => {
     const { check } = this.state;
-    const { newFavoriteSongs } = this.props;
+    // const { newFavoriteSongs } = this.props;
     if (check === false) {
       this.setState({
         check: true,
       });
       this.addSong();
-      newFavoriteSongs();
     } else if (check === true) {
       this.setState({
         check: false,
       });
       this.removeSong();
-      newFavoriteSongs();
+      // newFavoriteSongs();
     }
   };
 
