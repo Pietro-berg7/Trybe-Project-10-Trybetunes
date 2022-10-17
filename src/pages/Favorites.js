@@ -33,7 +33,7 @@ export default class Favorites extends Component {
           .map((element) => (<MusicCard
             key={ element.trackName }
             music={ element }
-            newFavoriteSongs={ this.newFavoriteSongs }
+            // newFavoriteSongs={ this.newFavoriteSongs }
           />)) }
       </div>
     );
