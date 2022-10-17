@@ -7,7 +7,6 @@ export default class MusicCard extends Component {
   state = {
     loading: false,
     check: false,
-    // favorite: [],
   };
 
   componentDidMount() {
@@ -34,7 +33,6 @@ export default class MusicCard extends Component {
     const result = await getFavoriteSongs(music);
     this.setState({
       loading: false,
-      // favorite: result,
     });
     if (result.some((element) => element.trackId === trackId)) {
       this.setState({
@@ -60,16 +58,19 @@ export default class MusicCard extends Component {
 
   handleFavMusic = () => {
     const { check } = this.state;
+    const { newFavoriteSongs } = this.props;
     if (check === false) {
       this.setState({
         check: true,
       });
       this.addSong();
+      newFavoriteSongs();
     } else if (check === true) {
       this.setState({
         check: false,
       });
       this.removeSong();
+      newFavoriteSongs();
     }
   };
 
