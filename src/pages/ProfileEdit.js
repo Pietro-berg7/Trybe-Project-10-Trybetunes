@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { updateUser, getUser } from '../services/userAPI';
+import '../styles/ProfileEdit.css';
 
 export default class ProfileEdit extends Component {
   state = {
@@ -88,55 +89,67 @@ export default class ProfileEdit extends Component {
       <div data-testid="page-profile-edit">
         <Header />
         { loading && <Loading /> }
-        <label htmlFor="userName">
-          <input
-            data-testid="edit-input-name"
-            type="text"
-            name="userName"
-            value={ userName }
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <label htmlFor="userEmail">
-          <input
-            data-testid="edit-input-email"
-            type="email"
-            name="userEmail"
-            value={ userEmail }
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <label htmlFor="userDescription">
-          <textarea
-            data-testid="edit-input-description"
-            name="userDescription"
-            cols="30"
-            rows="10"
-            value={ userDescription }
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <label htmlFor="userImage">
-          <input
-            data-testid="edit-input-image"
-            type="text"
-            name="userImage"
-            value={ userImage }
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <button
-          data-testid="edit-button-save"
-          type="submit"
-          disabled={ button }
-          onClick={ this.updateUser }
-        >
-          Salvar
-        </button>
+        <section className="profile-edit__section">
+          <label className="profile-edit__label" htmlFor="userName">
+            Nome:
+            <input
+              className="profile-edit__inputs"
+              data-testid="edit-input-name"
+              type="text"
+              name="userName"
+              value={ userName }
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <label className="profile-edit__label" htmlFor="userEmail">
+            E-mail:
+            <input
+              className="profile-edit__inputs"
+              data-testid="edit-input-email"
+              type="email"
+              name="userEmail"
+              value={ userEmail }
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <label className="profile-edit__label" htmlFor="userImage">
+            Foto de perfil:
+            <input
+              className="profile-edit__inputs"
+              data-testid="edit-input-image"
+              type="text"
+              name="userImage"
+              value={ userImage }
+              onChange={ this.handleChange }
+              required
+              placeholder="Link de uma foto"
+            />
+          </label>
+          <label className="profile-edit__label" htmlFor="userDescription">
+            Descrição
+            <textarea
+              className="profile-edit__textarea"
+              data-testid="edit-input-description"
+              name="userDescription"
+              cols="30"
+              rows="10"
+              value={ userDescription }
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <button
+            className="profile-edit__button"
+            data-testid="edit-button-save"
+            type="submit"
+            disabled={ button }
+            onClick={ this.updateUser }
+          >
+            Salvar
+          </button>
+        </section>
       </div>
     );
   }

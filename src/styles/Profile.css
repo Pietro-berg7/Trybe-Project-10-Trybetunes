@@ -1,0 +1,66 @@
+.profile__div {
+  display: flex;
+  margin: 0 auto 50px;
+  width: 70%;
+}
+
+.profile__section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+}
+
+.profile__image {
+  border-radius: 300px;
+  margin: 50px 0;
+  width: 40%;
+}
+
+.profile__link {
+  align-items: center;
+  background: #131213;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #0a0a0a , -5px -5px 0 #1c1a1c;
+  color: #107e22;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 500;
+  height: 45px;
+  justify-content: center;
+  width: 40%;
+}
+
+.profile__link:hover {
+  box-shadow: 5px 5px 0 #028117 , -5px -5px 0 #636363;
+  color: white;
+  transform: scale(1.05);
+  transition: 0.4s;
+}
+
+.profile__aside {
+  background: #131213;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #0a0a0a , -5px -5px 0 #1c1a1c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  width: 40%;
+}
+
+.profile__info {
+  align-items: center;
+  background: #131213;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  text-align: justify;
+}
+
+.profile__h3 {
+  color: #107e22;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-align: center;
+}

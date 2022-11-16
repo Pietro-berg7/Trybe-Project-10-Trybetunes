@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
 import Card from '../components/Card';
-import './Search.css';
+import '../styles/Search.css';
 
 export default class Search extends Component {
   state = {

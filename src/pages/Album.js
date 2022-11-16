@@ -3,6 +3,7 @@ import { shape, string } from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import '../styles/Album.css';
 
 export default class Album extends Component {
   state = {
@@ -32,16 +33,22 @@ export default class Album extends Component {
     return (
       <div data-testid="page-album">
         <Header />
-        <section>
-          <img src={ image } alt={ album } />
-          <h2 data-testid="artist-name">{ artist }</h2>
-          <h3 data-testid="album-name">{ album }</h3>
-        </section>
-        <ul>
-          { musicList
-            .filter((element) => element.kind === 'song')
-            .map((element) => <MusicCard key={ element.trackName } music={ element } />) }
-        </ul>
+        <div className="album__div">
+          <section className="album__section">
+            <img className="album__img" src={ image } alt={ album } />
+            <aside className="album__aside">
+              <h2 className="album__h2" data-testid="artist-name">{ artist }</h2>
+              <h3 className="album__h3" data-testid="album-name">{ album }</h3>
+            </aside>
+          </section>
+          <ul className="album__ul">
+            { musicList
+              .filter((element) => element.kind === 'song')
+              .map((element) => (
+                <MusicCard key={ element.trackName } music={ element } />
+              )) }
+          </ul>
+        </div>
       </div>
     );
   }

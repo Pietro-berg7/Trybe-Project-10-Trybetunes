@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { object } from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
-import './Login.css';
+import '../styles/Login.css';
 
 export default class Login extends Component {
   state = {

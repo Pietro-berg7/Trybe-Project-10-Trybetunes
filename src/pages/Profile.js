@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser } from '../services/userAPI';
+import '../styles/Profile.css';
 
 export default class Profile extends Component {
   state = {
@@ -42,24 +43,36 @@ export default class Profile extends Component {
       <div data-testid="page-profile">
         <Header />
         { loading && <Loading /> }
-        <section>
-          <img
-            data-testid="profile-image"
-            src={ userImage }
-            alt={ `${userName} profile pic` }
-          />
-          <Link
-            to="/profile/edit"
-          >
-            Editar perfil
-          </Link>
-        </section>
-        <h3>Nome</h3>
-        <p>{ userName }</p>
-        <h3>Email</h3>
-        <p>{ userEmail }</p>
-        <h3>Descrição</h3>
-        <p>{ userDescription }</p>
+        <div className="profile__div">
+          <section className="profile__section">
+            <img
+              className="profile__image"
+              data-testid="profile-image"
+              src={ userImage }
+              alt={ `${userName} profile pic` }
+            />
+            <Link
+              className="profile__link"
+              to="/profile/edit"
+            >
+              Editar perfil
+            </Link>
+          </section>
+          <aside className="profile__aside">
+            <div className="profile__info">
+              <h3 className="profile__h3">Nome</h3>
+              <p>{ userName }</p>
+            </div>
+            <div className="profile__info">
+              <h3 className="profile__h3">Email</h3>
+              <p>{ userEmail }</p>
+            </div>
+            <div className="profile__info">
+              <h3 className="profile__h3">Descrição</h3>
+              <p>{ userDescription }</p>
+            </div>
+          </aside>
+        </div>
       </div>
     );
   }

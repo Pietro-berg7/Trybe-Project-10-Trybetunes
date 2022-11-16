@@ -1,0 +1,35 @@
+.card__div {
+  background: #131213;
+  border-radius: 0;
+  box-shadow: 7px 7px 0 #0a0a0a , -7px -7px 0 #1c1a1c;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  margin: 15px 15px 25px;
+  padding-bottom: 15px;
+  width: 150px;
+}
+
+.card__div:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.card__img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 80%;
+}
+
+.card__p {
+  color: white;
+  font-size: 0.9em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 15ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

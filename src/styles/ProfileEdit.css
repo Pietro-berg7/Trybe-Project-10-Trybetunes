@@ -1,0 +1,54 @@
+.profile-edit__section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 50px;
+  padding: 30px;
+  width: 40%;
+}
+
+.profile-edit__label {
+  color: #107e22;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.profile-edit__inputs {
+  border-color: #028117;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 600;
+  height: 30px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.profile-edit__textarea {
+  border-color: #028117;
+  border-radius: 5px;
+  font-size: 1.05em;
+  font-weight: 600;
+  height: 200px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.profile-edit__button {
+  background-color: #107e22;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 700;
+  height: 30px;
+  margin: 20px auto 0;
+  text-align: center;
+  width: 100px;
+}
+
+.profile-edit__button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
